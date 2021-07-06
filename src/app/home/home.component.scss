@@ -1,0 +1,21 @@
+h3,h1,h6{
+    color: white;
+}
+.brdr{
+    width: 30%;
+    height: 1px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 5px;
+}
+.item{
+    position: relative;
+
+    .vote{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        color: white;
+        background-color: #09c;
+        
+    }
+}

@@ -1,0 +1,56 @@
+<app-home-header [parentData]="trendingMovies"></app-home-header>
+
+<div class="container">
+    <div class="row py-5">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="brdr my-4"></div>
+            <h1>trending movies to watch rifgt now</h1>
+            <h6>most watched movies by days</h6>
+            <div class="brdr my-4"></div>
+        </div>
+        <div *ngFor='let movie of trendingMovies' class="col-lg-2 col-md-3 col-sm-6 my-3">
+            <a [routerLink]="['/moviedetails', movie.id]">
+                <div class="item">
+                    <img [src]="imgPrefix + movie.poster_path" [alt]="movie.title" class="w-100 mb-2">
+                    <h3 class="h6">{{movie.title}}</h3>
+                    <div class="vote p-2">{{movie.vote_average}}</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="brdr my-4"></div>
+            <h1>trending TV shows to watch rifgt now</h1>
+            <h6>most TV shows by days</h6>
+            <div class="brdr my-4"></div>
+        </div>
+        <div *ngFor='let tv of trendingTV' class="col-lg-2 col-md-3 col-sm-6 my-3">
+            <a [routerLink]="['/tvdetails', tv.id]">
+                <div class="item">
+                    <img [src]="imgPrefix + tv.poster_path" [alt]="tv.title" class="w-100 mb-2">
+                    <h3 class="h6">{{tv.title}}</h3>
+                    <div class="vote p-2">{{tv.vote_average}}</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="brdr my-4"></div>
+            <h1>trending actors to watch rifgt now</h1>
+            <h6>most watched actors by days</h6>
+            <div class="brdr my-4"></div>
+        </div>
+        <div *ngFor='let person of trendingPeople' class="col-lg-2 col-md-3 col-sm-6 my-3">
+            <a [routerLink]="['/persondetails', person.id]">
+                <div class="item">
+                    <img [src]="imgPrefix + person.profile_path" [alt]="person.title" class="w-100 mb-2">
+                    <h3 class="h6">{{person.name}}</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
